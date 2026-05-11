@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY . .
-RUN npx tsc -p tsconfig.build.json
+RUN ./node_modules/.bin/tsc -p tsconfig.build.json --skipLibCheck
 
 FROM node:20-alpine AS production
 WORKDIR /app
