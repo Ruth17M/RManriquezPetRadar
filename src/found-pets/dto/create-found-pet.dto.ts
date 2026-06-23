@@ -22,10 +22,10 @@ export class CreateFoundPetDto {
   description?: string;
 
   @IsNumber()
-  latitude: number;
+  latitude!: number;
 
   @IsNumber()
-  longitude: number;
+  longitude!: number;
 
   @IsOptional()
   @IsString()
