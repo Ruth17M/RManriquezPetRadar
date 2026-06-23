@@ -22,9 +22,12 @@ import { FoundPetsModule } from './found-pets/found-pets.module';
         database: config.get('DB_NAME') as string,
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true,
-        ssl: {
+        ssl: true,
+        extra: {
+          ssl: {
           rejectUnauthorized: false,
         },
+       },
       }),
     }),
 
